@@ -43,7 +43,7 @@
                         <th scope="col">Quantidade</th>
                         <th scope="col">Preco unitario</th>
                         <th scope="col">Preco Total</th>
-                        <th scope="col">Accao</th>
+                        <th scope="col">Accao</th> 
                     </tr>
                 </thead>
                 <tbody>
@@ -54,7 +54,7 @@
                             <td>{{ $capitulo->quantidade }}</td>
                             <td>{{ $capitulo->preco_unitario }}</td>
                             <td>{{ $capitulo->preco_total }}</td>
-                            {{-- <td>
+                            <td>
                                 <form action="{{ route('capitulos.destroy', $capitulo->id) }}" method="POST">
                                     <a class="btn btn-success bi bi-eye btn-sm"
                                         href="{{ route('capitulos.show', $capitulo->id) }}"></a>
@@ -64,7 +64,7 @@
                                     @method('DELETE')
                                     <button class="btn btn-danger bi bi-trash-fill btn-sm"></button>
                                 </form>
-                            </td> --}}
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -291,11 +291,11 @@
                             <!--  Modal-->
 
 
-                            <div id="box" style="background-color: salmon; width: 100px; height: 100px">
+                            {{-- <div id="box" style="background-color: salmon; width: 100px; height: 100px">
                                 Box 1
                               </div>
                               <button id="btn">Hide div</button>
-                              {{-- <body>
+                              <body>
                                 <select id="select-state" placeholder="Pick a state...">
                                   <option value="">Select a state...</option>
                                   <option value="AL">Alabama</option>
@@ -314,14 +314,14 @@
                                   <option value="IL">Illinois</option>
                                   <option value="IN">Indiana</option>
                                 </select>
-                              </body> --}}
+                              </body>
 
                             
                             
                               <div>
                                 <button type="submit" class="btn btn-primary" href="">Registar projecto</button>
                                 <button type="reset" class="btn btn-secondary">Limpar todos campos</button>
-                            </div>
+                            </div> --}}
                         </form>
                         <!-- End Multi Columns Form -->
                     </div>
@@ -333,7 +333,7 @@
 
 
     <script src={{ asset('https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js') }}></script>
-<script>
+{{-- <script>
     const box = document.getElementById('box');
 
     const btn = document.getElementById('btn');
@@ -349,7 +349,7 @@
         btn.textContent = 'Show div';
     }
     });
-</script>
+</script> --}}
     {{-- Script de seleciona Itens atravez da base de dados itens e faz set da designacao --}}
     <script>
         jQuery(document).ready(function() {
