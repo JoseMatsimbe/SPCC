@@ -315,13 +315,13 @@
                                   <option value="IN">Indiana</option>
                                 </select>
                               </body>
-
+--}}
                             
                             
                               <div>
                                 <button type="submit" class="btn btn-primary" href="">Registar projecto</button>
                                 <button type="reset" class="btn btn-secondary">Limpar todos campos</button>
-                            </div> --}}
+                            </div> 
                         </form>
                         <!-- End Multi Columns Form -->
                     </div>
@@ -357,7 +357,17 @@
                 if (jQuery(this).attr('name') === 'result') {
                     return false;
                 }
+                // K=(1+(DI+AL+AC+R+DF+DM))/((1/(1+L)+1/(1+T))-1)
 
+                var DI = (jQuery('#DI').val() == '' ? "" : jQuery('#DI').val());
+                var AL = (jQuery('#AL').val() == '' ? "" : jQuery('#AL').val());
+                var quantidade = (jQuery('#quantidade').val() == '' ? "" : jQuery('#quantidade').val());
+                var quantidade = (jQuery('#quantidade').val() == '' ? "" : jQuery('#quantidade').val());
+                var quantidade = (jQuery('#quantidade').val() == '' ? "" : jQuery('#quantidade').val());
+                var quantidade = (jQuery('#quantidade').val() == '' ? "" : jQuery('#quantidade').val());
+                var quantidade = (jQuery('#quantidade').val() == '' ? "" : jQuery('#quantidade').val());
+                var quantidade = (jQuery('#quantidade').val() == '' ? "" : jQuery('#quantidade').val());
+                var quantidade = (jQuery('#quantidade').val() == '' ? "" : jQuery('#quantidade').val());
                 var quantidade = (jQuery('#quantidade').val() == '' ? "" : jQuery('#quantidade').val());
                 var preco_unitario = (jQuery('#preco_unitario').val() == '' ? "" : jQuery('#preco_unitario')
                     .val());
