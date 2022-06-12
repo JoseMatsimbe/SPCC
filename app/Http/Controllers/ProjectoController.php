@@ -53,7 +53,7 @@ class ProjectoController extends Controller
             Projecto::create($request->all());
             return redirect()->route('projectos.index')->with('success','projecto criado com sucesso');
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -64,10 +64,11 @@ class ProjectoController extends Controller
     {
         $itens = Item::all();
         $descricoes = Descricao::all();
-        $capitulos = Capitulo::all();
+        $capitulos = Capitulo::where('projecto_id', $projecto->id)->get();
         return view('projectos.show', compact('projecto','itens','descricoes','capitulos'));  
 
     }
+    
 
     /**
      * Show the form for editing the specified resource.

@@ -17,7 +17,7 @@ class CapituloController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -27,7 +27,9 @@ class CapituloController extends Controller
      */
     public function create()
     {
-        //
+        // $capitulos = Capitulo::latest()->paginate(5);
+        return view('capitulos.create');
+
     }
 
     /**
@@ -48,7 +50,7 @@ class CapituloController extends Controller
             'preco_total'=>'required'
         ]);
         Capitulo::create($request->all());
-        // return redirect()->route('projectos.show')->with('success','capitulo criado com sucesso');
+        return redirect()->route('projectos.show', $projecto_id=$request->projecto_id)->with('success','capitulo criado com sucesso');
 
     }
 

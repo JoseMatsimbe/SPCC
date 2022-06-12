@@ -17,6 +17,7 @@ class Capitulo extends Model
         'preco_unitario',
         'preco_total'
     ];
+    
     public function item()
     {
         return $this->hasMany(Item::class);

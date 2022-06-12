@@ -22,7 +22,7 @@ class CreateCapitulosTable extends Migration
                 $table->string('quantidade');
                 $table->string('preco_unitario');
                 $table->string('preco_total');           
-                $table->foreignId('projeto_id')->constrained()->onDelete('CASCADE')->onUpdate('CASCADE');
+                $table->foreignId('projecto_id')->constrained()->onDelete('CASCADE')->onUpdate('CASCADE');
                 $table->timestamps();
             });
         }
