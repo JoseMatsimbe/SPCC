@@ -17,7 +17,8 @@ class CreateCapitulosTable extends Migration
             Schema::create('capitulos', function (Blueprint $table) {
                 $table->id();
                 $table->string('nome');            
-                $table->string('codigo');
+                $table->integer('codigo');
+                $table->integer('codigocap');
                 $table->string('designacao');
                 $table->string('quantidade');
                 $table->string('preco_unitario');

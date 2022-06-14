@@ -60,9 +60,11 @@ class ProjectoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Projecto $projecto)
+    public function show(Projecto $projecto, Item $itens)
     {
         $itens = Item::all();
+        // $itens = Item::where('codigocap', $item->codigo)->get();
+
         $descricoes = Descricao::all();
         $capitulos = Capitulo::where('projecto_id', $projecto->id)->get();
         return view('projectos.show', compact('projecto','itens','descricoes','capitulos'));  

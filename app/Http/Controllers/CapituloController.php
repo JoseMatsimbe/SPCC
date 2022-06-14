@@ -17,7 +17,9 @@ class CapituloController extends Controller
      */
     public function index()
     {
-        
+        $capitulos = Capitulo::latest()->paginate(5);
+        return view('capitulos.show', compact('capitulos'))->with(request()->input('page'));
+
     }
 
     /**
@@ -44,6 +46,7 @@ class CapituloController extends Controller
             'nome'=>'required',
             'projecto_id'=>'required',
             'codigo'=>'required',
+            'codigocap'=>'required',
             'designacao'=>'required',
             'quantidade'=>'required',
             'preco_unitario'=>'required',

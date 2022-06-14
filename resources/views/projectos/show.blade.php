@@ -9,8 +9,7 @@
             <!-- Table with stripped rows -->
             <div>
                 <div class="col-md-6">
-                    <label class="form-label ">PROJEcTO N.</label>
-                    <input placeholder="{{ $projecto->numero_projecto }}" class="form-control" disabled="disabled">
+                    <label class="form-label ">PROJECTO N. {{ $projecto->numero_projecto }}</label>
                 </div>
                 <label class="form-label">DESCRICAO: <span>{{ $projecto->descricao }}</span></label> <br>
                 <label class="form-label">LOCALIZACAO: <span>{{ $projecto->localizacao }}</span></label> <br>
@@ -26,7 +25,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">Capitulos do Projeto</h5>
-            
+
             @if ($message = Session::get('success'))
                 <div class="alert alert-sucess">
                     <strong>
@@ -38,34 +37,44 @@
             <table class="table datatable">
                 <thead>
                     <tr>
-                        <th scope="col">Capitulo</th>
+                        <th scope="col"></th>
+                        {{-- <th scope="col">codigo</th> --}}
                         <th scope="col">Designacao</th>
                         <th scope="col">Quantidade</th>
                         <th scope="col">Preco unitario</th>
                         <th scope="col">Preco Total</th>
-                        <th scope="col">Accao</th> 
+                        {{-- <th scope="col">Accao</th> --}}
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($capitulos as $capitulo)
-                        <tr>
-                            <td>{{ $capitulo->nome }}</td>
-                            <td>{{ $capitulo->designacao }}</td>
-                            <td>{{ $capitulo->quantidade }}</td>
-                            <td>{{ $capitulo->preco_unitario }}</td>
-                            <td>{{ $capitulo->preco_total }}</td>
-                            <td>
-                                <form action="{{ route('capitulos.destroy', $capitulo->id) }}" method="POST">
-                                    <a class="btn btn-success bi bi-eye btn-sm"
-                                        href="{{ route('capitulos.show', $capitulo->id) }}"></a>
-                                    <a class="btn btn-warning bi bi-pencil btn-sm"
-                                        href="{{ route('capitulos.edit', $capitulo->id) }}"></a>
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger bi bi-trash-fill btn-sm"></button>
-                                </form>
-                            </td>
-                        </tr>
+                        <td></td>
+                        <td></td>
+                        <td>Capitulo {{ $capitulo->nome }}</td>
+                        <td></td>
+                        <td></td>
+
+                        @foreach ($capitulos as $capitulo)
+                            <tr>
+                                <td></td>
+                                {{-- <td>{{ $capitulo->codigo }}</td> --}}
+                                <td>{{ $capitulo->designacao }}</td>
+                                <td>{{ $capitulo->quantidade }}</td>
+                                <td>{{ $capitulo->preco_unitario }}</td>
+                                <td>{{ $capitulo->preco_total }}</td>
+                                {{-- <td>
+                                    <form action="{{ route('capitulos.destroy', $capitulo->id) }}" method="POST">
+                                        <a class="btn btn-success bi bi-eye btn-sm"
+                                            href="{{ route('capitulos.show', $capitulo->id) }}"></a>
+                                        <a class="btn btn-warning bi bi-pencil btn-sm"
+                                            href="{{ route('capitulos.edit', $capitulo->id) }}"></a>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger bi bi-trash-fill btn-sm"></button>
+                                    </form>
+                                </td> --}}
+                            </tr>
+                        @endforeach
                     @endforeach
                 </tbody>
             </table>
@@ -99,7 +108,8 @@
                             <div class="col-md-6">
                                 <label for="" class="form-label"> Projecto {{ $projecto->nome }}</label>
                                 <input type="text" id="projecto_id" class="form-control" name='projecto_id'
-                                    placeholder="{{ $projecto->nome }}" value="{{ $projecto->numero_projecto }}" required>
+                                    placeholder="{{ $projecto->nome }}" value="{{ $projecto->numero_projecto }}"
+                                    required>
                             </div>
 
                             <div class="col-md-6">
@@ -114,14 +124,13 @@
 
                             <div class="col-md-6">
                                 <label for="" class="form-label"> Nome do Capitulo </label>
-                                <input type="text" id="nome" class="form-control" name='nome'
-                                    placeholder="Capituo" required>
+                                <input type="text" id="nome" class="form-control" name='nome' placeholder="Capituo"
+                                    required>
                             </div>
 
                             <div class="col-md-6">
                                 <label for="" class="form-label"> Codigo do Capitulo</label>
-                                <input type="text" id="codigo" class="form-control" name='codigo'
-                                    placeholder=" " required>
+                                <input type="text" id="codigocap" class="form-control" name='codigocap' placeholder=" " required>
                             </div>
                             <div class="col-md-6">
                                 <label for="" class="form-label"> Designacao </label>
@@ -192,94 +201,94 @@
 
                                         <div class="modal-body">
                                             <div class="row g-3">
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">Despesa Inicial (D)</label>
-                                                <input type="number" class="form-control" name='di' placeholder="" id=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">Administracao Local (AL)</label>
-                                                <input type="number" class="form-control" name='al' placeholder="" id=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">Administracao Central(AC)</label>
-                                                <input type="number" class="form-control" name='ac' placeholder="" id=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">Despesa Financeira (DF)</label>
-                                                <input type="number" class="form-control" name='df' placeholder="" id=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">Despesa de manuntencao</label>
-                                                <input type="number" class="form-control" name='dm' placeholder="" id=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">Outras Despesas</label>
-                                                <input type="number" class="form-control" name='d1' placeholder="" id=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">Outras Despesas</label>
-                                                <input type="number" class="form-control" name='d2' placeholder="" id=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">Outras Despesas</label>
-                                                <input type="number" class="form-control" name='d3' placeholder="" id=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">Outras Despesas</label>
-                                                <input type="number" class="form-control" name='d4' placeholder="" id=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">Iva</label>
-                                                <input type="number" class="form-control" name='iva' placeholder="" id=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">IRPS</label>
-                                                <input type="number" class="form-control" name='irps' placeholder="" id=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">Outros tributos 1</label>
-                                                <input type="number" class="form-control" name='' placeholder="" id=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">Outros tributos 2</label>
-                                                <input type="number" class="form-control" name='' placeholder="" id=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">Outros tributos 3</label>
-                                                <input type="number" class="form-control" name='' placeholder="" id=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">Outros tributos 4</label>
-                                                <input type="number" class="form-control" name='' placeholder="" id=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">Lucro Bruto</label>
-                                                <input type="number" class="form-control" name='' placeholder="" id=""
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="" class="form-label">Indutor de custo (K)</label>
-                                                <input type="number" class="form-control" name='' placeholder="" id=""
-                                                    required>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">Despesa Inicial (D)</label>
+                                                    <input type="number" class="form-control" name='di' placeholder=""
+                                                        id="DI" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">Administracao Local (AL)</label>
+                                                    <input type="number" class="form-control" name='al' placeholder=""
+                                                        id="AL" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">Administracao Central(AC)</label>
+                                                    <input type="number" class="form-control" name='ac' placeholder=""
+                                                        id="AC" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">Despesa Financeira (DF)</label>
+                                                    <input type="number" class="form-control" name='df' placeholder=""
+                                                        id="DF" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">Despesa de manuntencao</label>
+                                                    <input type="number" class="form-control" name='dm' placeholder=""
+                                                        id="DM" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">Outras Despesas</label>
+                                                    <input type="number" class="form-control" name='d1' placeholder=""
+                                                        id="OD1" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">Outras Despesas</label>
+                                                    <input type="number" class="form-control" name='d2' placeholder=""
+                                                        idOD2 required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">Outras Despesas</label>
+                                                    <input type="number" class="form-control" name='d3' placeholder=""
+                                                        id="OD3" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">Outras Despesas</label>
+                                                    <input type="number" class="form-control" name='d4' placeholder=""
+                                                        id="OD4" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">Iva</label>
+                                                    <input type="number" class="form-control" name='iva' placeholder=""
+                                                        id="IVA" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">IRPS</label>
+                                                    <input type="number" class="form-control" name='irps' placeholder=""
+                                                        id="IRPS" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">Outros tributos 1</label>
+                                                    <input type="number" class="form-control" name='' placeholder=""
+                                                        id="OT1" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">Outros tributos 2</label>
+                                                    <input type="number" class="form-control" name='' placeholder=""
+                                                        id="OT2" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">Outros tributos 3</label>
+                                                    <input type="number" class="form-control" name='' placeholder=""
+                                                        id="OT3" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">Outros tributos 4</label>
+                                                    <input type="number" class="form-control" name='' placeholder=""
+                                                        id="OT4" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">Lucro Bruto</label>
+                                                    <input type="number" class="form-control" name='' placeholder=""
+                                                        id="LB" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="" class="form-label">Indutor de custo (K)</label>
+                                                    <input type="number" class="form-control" name='' placeholder=""
+                                                        id="K" required>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                        
+
 
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-primary" name="somar" id="somar"
@@ -289,39 +298,10 @@
                                 </div>
                             </div>
                             <!--  Modal-->
-
-
-                            {{-- <div id="box" style="background-color: salmon; width: 100px; height: 100px">
-                                Box 1
-                              </div>
-                              <button id="btn">Hide div</button>
-                              <body>
-                                <select id="select-state" placeholder="Pick a state...">
-                                  <option value="">Select a state...</option>
-                                  <option value="AL">Alabama</option>
-                                  <option value="AK">Alaska</option>
-                                  <option value="AZ">Arizona</option>
-                                  <option value="AR">Arkansas</option>
-                                  <option value="CA">California</option>
-                                  <option value="CO">Colorado</option>
-                                  <option value="CT">Connecticut</option>
-                                  <option value="DE">Delaware</option>
-                                  <option value="DC">District of Columbia</option>
-                                  <option value="FL">Florida</option>
-                                  <option value="GA">Georgia</option>
-                                  <option value="HI">Hawaii</option>
-                                  <option value="ID">Idaho</option>
-                                  <option value="IL">Illinois</option>
-                                  <option value="IN">Indiana</option>
-                                </select>
-                              </body>
---}}
-                            
-                            
-                              <div>
-                                <button type="submit" class="btn btn-primary" href="">Registar projecto</button>
+                            <div>
+                                <button type="submit" class="btn btn-primary" href="">Registar Capitulo</button>
                                 <button type="reset" class="btn btn-secondary">Limpar todos campos</button>
-                            </div> 
+                            </div>
                         </form>
                         <!-- End Multi Columns Form -->
                     </div>
@@ -333,23 +313,7 @@
 
 
     <script src={{ asset('https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js') }}></script>
-{{-- <script>
-    const box = document.getElementById('box');
-
-    const btn = document.getElementById('btn');
-
-    btn.addEventListener('click', function handleClick() {
-    if (box.style.visibility === 'hidden') {
-        box.style.visibility = 'visible';
-
-        btn.textContent = 'Hide div';
-    } else {
-        box.style.visibility = 'hidden';
-
-        btn.textContent = 'Show div';
-    }
-    });
-</script> --}}
+    
     {{-- Script de seleciona Itens atravez da base de dados itens e faz set da designacao --}}
     <script>
         jQuery(document).ready(function() {
@@ -361,19 +325,21 @@
 
                 var DI = (jQuery('#DI').val() == '' ? "" : jQuery('#DI').val());
                 var AL = (jQuery('#AL').val() == '' ? "" : jQuery('#AL').val());
+                var AC = (jQuery('#AC').val() == '' ? "" : jQuery('#AC').val());
+                var R =  (jQuery('#R').val() == '' ? "" : jQuery('#R').val());
+                var DF = (jQuery('#DF').vDF() == '' ? "" : jQuery('#AL').val());
+                var DM = (jQuery('#DM').val() == '' ? "" : jQuery('#DM').val());
+                var L =  (jQuery('#L').val() == '' ? "" : jQuery('#L').val());
+                var DI = (jQuery('#DI').val() == '' ? "" : jQuery('#DI').val());
+                var DI = (jQuery('#K').val() == '' ? "" : jQuery('#K').val());
+                var K =  (1+(parseInt(DI)+parseInt(AL)+parseInt(AC)+parseInt(R)+parseInt(DF)+parseInt(DM)))/((1/(1+parseInt(L))+1/(1+parseInt(T)))-1);
+                jQuery('#K').val(K);
+
                 var quantidade = (jQuery('#quantidade').val() == '' ? "" : jQuery('#quantidade').val());
-                var quantidade = (jQuery('#quantidade').val() == '' ? "" : jQuery('#quantidade').val());
-                var quantidade = (jQuery('#quantidade').val() == '' ? "" : jQuery('#quantidade').val());
-                var quantidade = (jQuery('#quantidade').val() == '' ? "" : jQuery('#quantidade').val());
-                var quantidade = (jQuery('#quantidade').val() == '' ? "" : jQuery('#quantidade').val());
-                var quantidade = (jQuery('#quantidade').val() == '' ? "" : jQuery('#quantidade').val());
-                var quantidade = (jQuery('#quantidade').val() == '' ? "" : jQuery('#quantidade').val());
-                var quantidade = (jQuery('#quantidade').val() == '' ? "" : jQuery('#quantidade').val());
-                var preco_unitario = (jQuery('#preco_unitario').val() == '' ? "" : jQuery('#preco_unitario')
-                    .val());
-                var preco_total = (parseInt(quantidade) * parseInt(preco_unitario));
                 jQuery('#quantidade').val(quantidade);
+                var preco_unitario = (jQuery('#preco_unitario').val() == '' ? "" : jQuery('#preco_unitario').val());
                 jQuery('#preco_unitario').val(preco_unitario);
+                var preco_total = (parseInt(quantidade) * parseInt(preco_unitario));
                 jQuery('#preco_total').val(preco_total);
 
 
@@ -487,8 +453,9 @@
         });
     });
     </script> --}}
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"
+        integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+
 @endsection

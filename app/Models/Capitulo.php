@@ -12,6 +12,7 @@ class Capitulo extends Model
         'nome',
         'projecto_id',
         'codigo',
+        'codigocap',
         'designacao',
         'quantidade',
         'preco_unitario',
