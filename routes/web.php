@@ -22,7 +22,6 @@ Route::get('/', function () {
 });
 
 
-// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('itens', ItemController::class);
@@ -39,3 +38,7 @@ Route::get('getItem/{codigo}', function ($id) {
     $item = App\Models\Item::where('codigo',$id)->get();
     return response()->json($item);
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

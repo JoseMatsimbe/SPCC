@@ -203,87 +203,87 @@
                                             <div class="row g-3">
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">Despesa Inicial (D)</label>
-                                                    <input type="number" class="form-control" name='di' placeholder=""
+                                                    <input type="number" class="form-control" name='DI' placeholder=""
                                                         id="DI" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">Administracao Local (AL)</label>
-                                                    <input type="number" class="form-control" name='al' placeholder=""
+                                                    <input type="number" class="form-control" name='AL' placeholder=""
                                                         id="AL" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">Administracao Central(AC)</label>
-                                                    <input type="number" class="form-control" name='ac' placeholder=""
+                                                    <input type="number" class="form-control" name='AC' placeholder=""
                                                         id="AC" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">Despesa Financeira (DF)</label>
-                                                    <input type="number" class="form-control" name='df' placeholder=""
+                                                    <input type="number" class="form-control" name='DF' placeholder=""
                                                         id="DF" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">Despesa de manuntencao</label>
-                                                    <input type="number" class="form-control" name='dm' placeholder=""
+                                                    <input type="number" class="form-control" name='DM' placeholder=""
                                                         id="DM" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">Outras Despesas</label>
-                                                    <input type="number" class="form-control" name='d1' placeholder=""
+                                                    <input type="number" class="form-control" name='OD1' placeholder=""
                                                         id="OD1" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">Outras Despesas</label>
-                                                    <input type="number" class="form-control" name='d2' placeholder=""
-                                                        idOD2 required>
+                                                    <input type="number" class="form-control" name='OD2' placeholder=""
+                                                        id="OD2" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">Outras Despesas</label>
-                                                    <input type="number" class="form-control" name='d3' placeholder=""
+                                                    <input type="number" class="form-control" name='OD3' placeholder=""
                                                         id="OD3" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">Outras Despesas</label>
-                                                    <input type="number" class="form-control" name='d4' placeholder=""
+                                                    <input type="number" class="form-control" name='OD4' placeholder=""
                                                         id="OD4" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">Iva</label>
-                                                    <input type="number" class="form-control" name='iva' placeholder=""
+                                                    <input type="number" class="form-control" name='IVA' placeholder=""
                                                         id="IVA" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">IRPS</label>
-                                                    <input type="number" class="form-control" name='irps' placeholder=""
+                                                    <input type="number" class="form-control" name='IRPS' placeholder=""
                                                         id="IRPS" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">Outros tributos 1</label>
-                                                    <input type="number" class="form-control" name='' placeholder=""
+                                                    <input type="number" class="form-control" name='OT1' placeholder=""
                                                         id="OT1" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">Outros tributos 2</label>
-                                                    <input type="number" class="form-control" name='' placeholder=""
+                                                    <input type="number" class="form-control" name='OT2' placeholder=""
                                                         id="OT2" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">Outros tributos 3</label>
-                                                    <input type="number" class="form-control" name='' placeholder=""
+                                                    <input type="number" class="form-control" name='OT3' placeholder=""
                                                         id="OT3" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">Outros tributos 4</label>
-                                                    <input type="number" class="form-control" name='' placeholder=""
+                                                    <input type="number" class="form-control" name='OT4' placeholder=""
                                                         id="OT4" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">Lucro Bruto</label>
-                                                    <input type="number" class="form-control" name='' placeholder=""
+                                                    <input type="number" class="form-control" name='LB' placeholder=""
                                                         id="LB" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="" class="form-label">Indutor de custo (K)</label>
-                                                    <input type="number" class="form-control" name='' placeholder=""
+                                                    <input type="number" class="form-control" name='K' placeholder=""
                                                         id="K" required>
                                                 </div>
                                             </div>
